@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Important Question ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: slideUp 1s ease;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+      animation: pulse 1.5s infinite;
+    }
+
+    #no {
+      background: #ccc;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    .heart {
+      position: fixed;
+      font-size: 24px;
+      animation: floatUp 2s ease forwards;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+    }
+    .final {
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.final img {
+  width: 300px;
+  max-width: 90%;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: pop 0.6s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Hey ANUSHA ❤️</h1>
+
+<p>
+  Hey baby, I know I was very rude to you and I am truly sorry.
+</p>
+
+<p>
+  I promise I’ll be better. I have some problems maybe I am insecure
+  impatient and a lot of other things but I promise I’ll be better for you.
+</p>
+
+<p>
+  Please be patient with me and don’t give up on me ❤️
+</p>
+
+<p style="margin-top: 20px; font-weight: bold;">
+  I love you sooo much ❤️  
+  <br>
+    your boyfriend, Anshul
+</p>
+
+
+
+    <h2>Will you be my Valentine? 💌</h2>
+
+    <button id="yes" onclick="sayYes()">Yes 🥰</button>
+    <button id="no" onmouseover="moveNo()">No 😤</button>
+  </div>
+
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      noBtn.style.position = "absolute";
+      noBtn.style.left = Math.random() * (window.innerWidth - 100) + "px";
+      noBtn.style.top = Math.random() * (window.innerHeight - 50) + "px";
+    }
+
+    function sayYes() {
+  document.body.innerHTML = `
+    <div class="final">
+      <h1>🔥 The hottest couple on this planet 🔥</h1>
+      <h1>Like honestly tell me a couple that looks better than us</h1>
+      <img src="us.jpg" alt="Us ❤️">
+      <p style="margin-top: 15px; font-size: 18px;">
+        I love you sooo much ❤️<br>
+        your boyfriend Anshul
+      </p>
+    </div>
+  `;
+}
+
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.top = window.innerHeight - 50 + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
